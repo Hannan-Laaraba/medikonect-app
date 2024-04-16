@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Medikonect from "../../asset/medikonect.png";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -8,15 +9,15 @@ export default function Navbar() {
   };
   return (
     <nav class="bg-white border-gray-200 dark:bg-gray-900 dark:border-gray-700">
-      <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+      <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto">
         <a href="#" class="flex items-center space-x-3 rtl:space-x-reverse">
           <img
-            src=""
-            class="h-8"
-            alt="Flowbite Logo"
+            src={Medikonect}
+            class="h-44"
+            alt="medikonect"
           />
           <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">
-            Flowbite
+            
           </span>
         </a>
         <button
@@ -149,14 +150,15 @@ export default function Navbar() {
                 </div>
               )}
             </li>
-            <button
+           
+          </ul>
+        </div>
+        <button
               type="button"
               class="text-white bg-[#C11574] hover:bg-[#890b50] focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
             >
               Book Consultation
             </button>
-          </ul>
-        </div>
       </div>
     </nav>
   );

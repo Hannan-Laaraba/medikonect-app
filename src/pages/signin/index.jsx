@@ -1,83 +1,62 @@
 import React, { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
-import {
-  GoogleAuthProvider,
-  getAuth,
-  signInWithEmailAndPassword,
-  signInWithPopup,
-} from "firebase/auth";
-import { auth } from "../../config/firebase";
+import axios from "axios";
+import { Link } from "react-router-dom";
+import Medikonect from "../../asset/medikonect.png";
 
 export default function SignIn() {
-  const navigate = useNavigate();
-
-  const [error, setError] = useState(null);
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
   const [rememberMe, setRememberMe] = useState(false);
+  const [error, setError] = useState(null);
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    const signinData = new FormData(event.target);
+    try {
+      const response = await axios.post("/api/login", { email, password });
+      // Handle successful login, e.g., store token in local storage
+    } catch (error) {
+      setError("Wrong email or password!!");
+    }
+  };
 
-    const email = signinData.get("email");
-    const password = signinData.get("password");
-    signInWithEmailAndPassword(auth, email, password)
-      .then((userCredential) => {
-        const user = userCredential.user;
-        if (rememberMe) {
-          localStorage.setItem("rememberedUser", JSON.stringify({ email }));
-        } else {
-          localStorage.removeItem("rememberedUser");
-        }
-        // Redirect to dashboard
-        navigate("/");
-      })
-      .catch((error) => {
-        const errorMessage = "Wrong email or password!!";
-        setError(errorMessage);
-      });
+  const handleRememberMeChange = (event) => {
+    setRememberMe(event.target.checked);
+    if (!event.target.checked) {
+      localStorage.removeItem("rememberedUser");
+    }
+  };
+
+  const handleEmailChange = (event) => {
+    setEmail(event.target.value);
+    if (rememberMe) {
+      localStorage.setItem("rememberedUser", event.target.value);
+    }
   };
 
   const togglePasswordVisibility = () => {
     setShowPassword(!showPassword);
   };
 
-  const signInWithGoogle = () => {
-    signInWithPopup(auth, new GoogleAuthProvider())
-      .then((result) => {
-        // This gives you a Google Access Token. You can use it to access the Google API.
-        const credential = GoogleAuthProvider.credentialFromResult(result);
-        const token = credential.accessToken;
-        // The signed-in user info.
-        const user = result.user;
-        navigate("/supplierdashboard");
-      })
-      .catch((error) => {
-        // Handle Errors here.
-        const errorCode = error.code;
-        const errorMessage = error.message;
-        setError(errorMessage);
-      });
-  };
-
   return (
     <>
-      <div class="min-h-screen bg-gray-100 text-gray-900 flex justify-center">
-        <div class="max-w-screen-xl m-0 sm:m-10 bg-white shadow sm:rounded-lg flex justify-center flex-1">
+      <div 
+      style={{
+        backgroundImage:` linear-gradient(top to bottom rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.9)), url('https://img.freepik.com/free-photo/young-handsome-physician-medical-robe-with-stethoscope_1303-17818.jpg?t=st=1713293442~exp=1713297042~hmac=20d1280564f3d3d366ccc81744ce87f560b0c2ce351a82261a6200a178ee05d0&w=740')`,backgroundSize: 'cover',
+        backgroundPosition: 'center',
+      }}>
+        <div class="sm:m-10  flex justify-center ">
           <div class="lg:w-1/2 xl:w-5/12 p-6 sm:p-12">
             <div>
               <img
-                src="https://drive.google.com/uc?export=view&id=1MFiKAExRFF0-2YNpAZzIu1Sh52J8r16v"
-                class="w-mx-auto"
+                src={Medikonect}
+                class="w-56"
               />
             </div>
             <div class="mt-12 flex flex-col items-center">
               <div class="w-full flex-1 mt-8">
                 <div class="flex flex-col items-center">
-                  <button
-                    onClick={signInWithGoogle}
-                    class="w-full max-w-xs font-bold shadow-sm rounded-lg py-3 bg-[#f298d8] text-gray-800 flex items-center justify-center transition-all duration-300 ease-in-out focus:outline-none hover:shadow focus:shadow-sm focus:shadow-outline"
-                  >
+                  <button class="w-full max-w-xs font-bold shadow-sm rounded-lg py-3 bg-[#f298d8] text-gray-800 flex items-center justify-center transition-all duration-300 ease-in-out focus:outline-none hover:shadow focus:shadow-sm focus:shadow-outline">
                     <div class="bg-white p-2 rounded-full">
                       <svg class="w-4" viewBox="0 0 533.5 544.3">
                         <path
@@ -103,31 +82,35 @@ export default function SignIn() {
                 </div>
 
                 <div class="my-12 border-b text-center">
-                  <div class="leading-none px-2 inline-block text-sm text-gray-600 tracking-wide font-medium bg-white transform translate-y-1/2">
+                  <div class="leading-none px-2 inline-block text-sm text-gray-100 tracking-wide font-medium bg-transparent transform translate-y-1/2">
                     Or sign In with MediKonect Email
                   </div>
                 </div>
 
                 <form onSubmit={handleSubmit}>
                   <div class="mx-auto max-w-xs">
-                    <div>
+                    <div class="relative">
                       <input
                         class="w-full px-8 py-4 rounded-lg font-medium bg-gray-100 border border-gray-200 placeholder-gray-500 text-sm focus:outline-none focus:border-gray-400 focus:bg-white"
                         type="email"
                         placeholder="Email"
+                        value={email}
+                        onChange={handleEmailChange}
                       />
-                      <i className="fa-regular fa-envelope w-[18px] h-[18px] absolute right-2"></i>
+                      <i className="fa-regular fa-envelope w-[18px] h-[18px] absolute right-2 top-2/4 transform -translate-y-2/4"></i>
                     </div>
-                    <div>
+                    <div class="relative">
                       <input
                         class="w-full px-8 py-4 rounded-lg font-medium bg-gray-100 border border-gray-200 placeholder-gray-500 text-sm focus:outline-none focus:border-gray-400 focus:bg-white mt-5"
-                        type="password"
+                        type={showPassword ? "text" : "password"}
                         placeholder="Password"
+                        value={password}
+                        onChange={(e) => setPassword(e.target.value)}
                       />
                       <i
                         className={`fa-solid fa-eye${
                           showPassword ? "-slash" : ""
-                        } w-[18px] h-[18px] absolute right-2 cursor-pointer`}
+                        } w-[18px] h-[18px] absolute right-2 top-2/4  cursor-pointer`}
                         onClick={togglePasswordVisibility}
                       ></i>
                     </div>
@@ -145,12 +128,13 @@ export default function SignIn() {
                           id="remember-me"
                           name="remember-me"
                           type="checkbox"
-                          className="h-4 w-4 shrink-0 text-blue-600 focus:ring-blue-500 border-gray-300 rounded"
-                          onChange={(e) => setRememberMe(e.target.checked)}
+                          className="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded"
+                          checked={rememberMe}
+                          onChange={handleRememberMeChange}
                         />
                         <label
                           htmlFor="remember-me"
-                          className="ml-3 block text-sm"
+                          className="ml-3 block text-sm text-blue-300"
                         >
                           Remember me
                         </label>
@@ -158,7 +142,7 @@ export default function SignIn() {
                       <div>
                         <Link
                           to="/forgot-password"
-                          className="text-blue-600 font-semibold text-sm hover:underline"
+                          className="text-blue-300 font-semibold text-sm hover:underline"
                         >
                           Forgot Password?
                         </Link>
@@ -180,19 +164,23 @@ export default function SignIn() {
                       </svg>
                       <span class="ml-">Sign In</span>
                     </button>
-                    <p class="mt-6 text-xs text-gray-600 text-center">
+                    <p class="mt-6 text-xs text-gray-300 text-center">
                       I agree to abide by MediKonect
+                      <br />
                       <a
                         href="#"
-                        class="border-b border-gray-500 border-dotted"
+                        class="border-b border-gray-100 border-dotted"
                       >
                         Terms of Service
                       </a>
+                      <br />
                       and its
                       <a
                         href="#"
-                        class="border-b border-gray-500 border-dotted"
+                        class="border-b border-gray-100 border-dotted"
                       >
+                        {" "}
+                        <br />
                         Privacy Policy
                       </a>
                     </p>
@@ -201,11 +189,6 @@ export default function SignIn() {
               </div>
             </div>
           </div>
-          {/* <div class="flex-1 bg-green-100 text-center hidden lg:flex">
-                  <div class="m-12 xl:m-16 w-full bg-contain bg-center bg-no-repeat"
-                      style="background-image: url('https://drive.google.com/uc?export=view&id=1KZ_Ub_2lZ0dHbKV0fAIhxVhiQA183RCz');">
-                  </div>
-              </div> */}
         </div>
       </div>
     </>
