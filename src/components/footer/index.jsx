@@ -1,4 +1,5 @@
 import React from "react";
+import Medikonect from "../../asset/medikonect.png"
 
 export default function Footer() {
   return (
@@ -8,7 +9,11 @@ export default function Footer() {
         <div className="md:w-[316px]">
           <p className="text-[18px] font-medium text-white">
             <h1 className="text-white font-extrabold">
-              <span className="text-rose-600">YOUR</span>LOGO
+            <img
+            src={Medikonect}
+            class="h-44"
+            alt="medikonect"
+          />
             </h1>
           </p>
           <p className="mt-[18px] text-[15px] font-normal text-white/[80%]">
