@@ -2,22 +2,11 @@ import React from "react";
 import About from "../../asset/about.jpg";
 
 
-function Spacer() {
-    return (
-      <div className="elementor-element elementor-element-39eb859 elementor-widget__width-initial elementor-widget elementor-widget-spacer animated swing">
-        <div className="elementor-widget-container">
-          <div className="elementor-spacer">
-            <div className="elementor-spacer-inner"></div>
-          </div>
-        </div>
-      </div>
-    );
-  }
 
 export default function OurPractice() {
   return (
     <>
-      <div className="w-full bg-white py-16 px-4">
+      <div className="w-full bg-white p-20">
         <div className="max-w-[1240px] mx-auto flex flex-wrap items-center justify-center">
           <div className="w-full  md:w-[50%] lg:w-[40%]">
             <img
@@ -65,7 +54,7 @@ export default function OurPractice() {
           </h1>
         </div>
       </div>
-      <Spacer />
+      
     </>
   );
 }

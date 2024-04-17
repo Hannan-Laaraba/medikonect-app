@@ -8,12 +8,12 @@ export default function Navbar() {
     setIsOpen(!isOpen);
   };
   return (
-    <nav class="bg-white border-gray-200 dark:bg-gray-900 dark:border-gray-700">
+    <nav class="bg-white border-gray-200 dark:bg-gray-900 dark:border-gray-700 p-10">
       <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto">
         <a href="#" class="flex items-center space-x-3 rtl:space-x-reverse">
           <img
             src={Medikonect}
-            class="h-36"
+            class="h-14"
             alt="medikonect"
           />
           <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">
@@ -85,7 +85,7 @@ export default function Navbar() {
               <button
                 id="dropdownNavbarLink"
                 onClick={toggleDropdown}
-                className="flex items-center justify-between w-full py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 md:w-auto dark:text-white md:dark:hover:text-blue-500 dark:focus:text-white dark:border-gray-700 dark:hover:bg-gray-700 md:dark:hover:bg-transparent"
+                className="flex relative items-center justify-between w-full py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 md:w-auto dark:text-white md:dark:hover:text-blue-500 dark:focus:text-white dark:border-gray-700 dark:hover:bg-gray-700 md:dark:hover:bg-transparent"
               >
                 Services{" "}
                 <svg
@@ -108,7 +108,7 @@ export default function Navbar() {
               {isOpen && (
                 <div
                   id="dropdownNavbar"
-                  className="z-10 font-normal bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600"
+                  className="z-10 absolute font-normal bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600"
                 >
                   <ul
                     className="py-2 text-sm text-gray-700 dark:text-gray-400"
