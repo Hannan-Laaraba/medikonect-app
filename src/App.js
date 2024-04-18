@@ -3,7 +3,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Homepage from "./pages/homepage";
 import SignIn from "./pages/signin";
 import Signup from "./pages/signup";
-import Contact from "./pages/contact";
+import Contact from "./components/contact";
 import OurPractice from "./components/ourpractice";
 import OurServices from "./components/ourservices";
 import Dashboard from "./pages/Administrator/dashboard";
