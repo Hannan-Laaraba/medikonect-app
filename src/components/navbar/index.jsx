@@ -8,7 +8,7 @@ export default function Navbar() {
     setIsOpen(!isOpen);
   };
   return (
-    <nav class="bg-white border-gray-200 dark:bg-gray-900 dark:border-gray-700 p-10">
+    <nav class="bg-white border-gray-200 text-[#27115f] dark:bg-gray-900 dark:border-gray-700 p-10">
       <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto">
         <a href="#" class="flex items-center space-x-3 rtl:space-x-reverse">
           <img
@@ -57,8 +57,8 @@ export default function Navbar() {
             </li>
             <li>
               <a
-                href="#"
-                class="block py-2 px-3 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 md:dark:text-blue-500 dark:bg-blue-600 md:dark:bg-transparent"
+                href="#ourpractice"
+                class="block py-2 px-3 text-[#27115f] rounded md:bg-transparent md:text-blue-700 md:p-0 md:dark:text-blue-500 dark:bg-blue-600 md:dark:bg-transparent"
                 aria-current="page"
               >
                 Our Practice
@@ -66,7 +66,7 @@ export default function Navbar() {
             </li>
             <li>
               <a
-                href="#"
+                href="#specialties"
                 class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
               >
                 Specialties
@@ -75,19 +75,32 @@ export default function Navbar() {
 
             <li>
               <a
-                href="#"
+                href="#contact"
                 class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
               >
                 Contact
               </a>
             </li>
+
             <li>
+              <a
+                href="#services"
+                class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
+              >
+                Services
+              </a>
+            </li>
+            
+           
+          </ul>
+        </div>
+        <li>
               <button
                 id="dropdownNavbarLink"
                 onClick={toggleDropdown}
-                className="flex relative items-center justify-between w-full py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 md:w-auto dark:text-white md:dark:hover:text-blue-500 dark:focus:text-white dark:border-gray-700 dark:hover:bg-gray-700 md:dark:hover:bg-transparent"
+                class="flex relative items-center justify-between w-full py-2 px-3 text-white bg-[#C11574] focus:ring-2 focus:ring-[#890b50] font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2  focus:outline-none "
               >
-                Services{" "}
+                Sign In{" "}
                 <svg
                   className="w-2.5 h-2.5 ms-2.5"
                   aria-hidden="true"
@@ -116,49 +129,31 @@ export default function Navbar() {
                   >
                     <li>
                       <a
-                        href="#"
+                        href="/signin"
                         className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
                       >
-                        Virtual Consultations
+                        As a provider
                       </a>
                     </li>
                     <li>
                       <a
-                        href="#"
+                        href="/signin"
                         className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
                       >
-                        Medical History Management
+                        As a patient
                       </a>
                     </li>
-                    <li>
-                      <a
-                        href="#"
-                        className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-                      >
-                        Specialist Referrals
-                      </a>
-                    </li>
-                    <li>
-                      <a
-                        href="#"
-                        className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-                      >
-                        Health Education Resources
-                      </a>
-                    </li>
+                    
                   </ul>
                 </div>
               )}
             </li>
-           
-          </ul>
-        </div>
-        <button
+        {/* <button
               type="button"
               class="text-white bg-[#C11574] hover:bg-[#890b50] focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
             >
               Book Consultation
-            </button>
+            </button> */}
       </div>
     </nav>
   );

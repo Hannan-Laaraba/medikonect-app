@@ -1,4 +1,12 @@
 import React from "react";
+import Provider1 from "../../asset/provider1.jpg";
+import Provider2 from "../../asset/provider2.jpg";
+import Provider3 from "../../asset/provider3.jpg";
+import Provider4 from "../../asset/provider4.jpg";
+import { Link } from "react-router-dom";
+
+
+
 
 export default function OurExperts() {
   return (
@@ -12,8 +20,9 @@ export default function OurExperts() {
               className="h-36 w-36 overflow-hidden rounded-lg ring-2 ring-gray-700 dark:ring-gray-100"
             >
               <img
-                src={`https://loremflickr.com/g/200/200/girl?random`}
+                src={Provider1}
                 alt={`Expert`}
+                style={{height: "100%"}}
               />
             </div>
             
@@ -21,8 +30,9 @@ export default function OurExperts() {
               className="h-36 w-36 overflow-hidden rounded-lg ring-2 ring-gray-700 dark:ring-gray-100"
             >
               <img
-                src={`https://loremflickr.com/g/200/200/girl?random`}
+                src={Provider2}
                 alt={`Expert`}
+                style={{height: "100%"}}
               />
             </div>
             
@@ -30,8 +40,9 @@ export default function OurExperts() {
               className="h-36 w-36 overflow-hidden rounded-lg ring-2 ring-gray-700 dark:ring-gray-100"
             >
               <img
-                src={`https://loremflickr.com/g/200/200/girl?random`}
+                src={Provider3}
                 alt={`Expert`}
+                style={{height: "100%"}}
               />
             </div>
             
@@ -39,8 +50,9 @@ export default function OurExperts() {
               className="h-36 w-36 overflow-hidden rounded-lg ring-2 ring-gray-700 dark:ring-gray-100"
             >
               <img
-                src={`https://loremflickr.com/g/200/200/girl?random`}
+                src={Provider4}
                 alt={`Expert`}
+                style={{height: "100%"}}
               />
             </div>
   
@@ -62,7 +74,7 @@ export default function OurExperts() {
             </p>{" "}
             <br />
             <button className="text-white bg-[#C11574] hover:bg-[#890b50] focus:ring-4 focus:ring-blue-300  rounded-lg text-xl px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">
-              View Professionals
+             <Link to={'/specialty'}> View Professionals</Link>
             </button>
           </div>
         </div>

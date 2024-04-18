@@ -56,7 +56,7 @@ export default function SignIn() {
             <div class="mt-12 flex flex-col items-center">
               <div class="w-full flex-1 mt-8">
                 <div class="flex flex-col items-center">
-                  <button class="w-full max-w-xs font-bold shadow-sm rounded-lg py-3 bg-[#f298d8] text-gray-800 flex items-center justify-center transition-all duration-300 ease-in-out focus:outline-none hover:shadow focus:shadow-sm focus:shadow-outline">
+                  {/* <button class="w-full max-w-xs font-bold shadow-sm rounded-lg py-3 bg-[#f298d8] text-gray-800 flex items-center justify-center transition-all duration-300 ease-in-out focus:outline-none hover:shadow focus:shadow-sm focus:shadow-outline">
                     <div class="bg-white p-2 rounded-full">
                       <svg class="w-4" viewBox="0 0 533.5 544.3">
                         <path
@@ -78,7 +78,7 @@ export default function SignIn() {
                       </svg>
                     </div>
                     <span class="ml-4">Sign In with Google</span>
-                  </button>
+                  </button> */}
                 </div>
 
                 <div class="my-12 border-b text-center">

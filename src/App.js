@@ -6,8 +6,10 @@ import Signup from "./pages/signup";
 import Contact from "./components/contact";
 import OurPractice from "./components/ourpractice";
 import OurServices from "./components/ourservices";
-import Dashboard from "./pages/Administrator/dashboard";
 import OurExperts from "./components/ourexperts";
+import UserDashboard from "./pages/userdashboard";
+import ProfDashboard from "./pages/profdashboard";
+import Specialty from "./pages/specialty";
 
 const router = createBrowserRouter([
   { path: "/", element: <Homepage /> },
@@ -16,7 +18,9 @@ const router = createBrowserRouter([
   { path: "/ourpractice", element: <OurPractice /> },
   { path: "/ourservices", element: <OurServices /> },
   { path: "/contact", element: <Contact /> },
-  { path: "/dashboard", element: <Dashboard /> },
+  { path: "/userdashboard", element: <UserDashboard /> },
+  { path: "/profdashboard", element: <ProfDashboard /> },
+  { path: "/specialty", element: <Specialty /> },
   { path: "/ourexperts", element: <OurExperts /> },
 
 
