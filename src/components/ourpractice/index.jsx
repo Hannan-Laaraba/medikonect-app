@@ -6,7 +6,7 @@ import About from "../../asset/about.jpg";
 export default function OurPractice() {
   return (
     <>
-      <div className="w-full bg-white p-20">
+      <div className="w-full p-20">
         <div className="max-w-[1240px] mx-auto flex flex-wrap items-center justify-center">
           <div className="w-full  md:w-[50%] lg:w-[40%]">
             <img

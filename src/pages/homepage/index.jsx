@@ -6,6 +6,8 @@ import OurServices from "../../components/ourservices";
 import Footer from "../../components/footer";
 import CallToAction from "../../components/calltoaction";
 import Specialties from "../../components/specialties";
+import OurAdvantages from "../../components/ouradvantages";
+import OurExperts from "../../components/ourexperts";
 
 
 
@@ -18,6 +20,8 @@ export default function Homepage() {
         <OurServices/>
         <CallToAction />
         <Specialties/>
+        <OurAdvantages/>
+        <OurExperts />
         <Footer />
         </>
     )

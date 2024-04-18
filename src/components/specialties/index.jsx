@@ -4,7 +4,7 @@ export default function Specialties() {
   return (
     <>
       <div>
-        <section>
+        <section className="p-20">
           <div>
             <p>Our Specialties</p>
           </div>

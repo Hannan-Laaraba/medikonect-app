@@ -6,6 +6,8 @@ import Signup from "./pages/signup";
 import Contact from "./pages/contact";
 import OurPractice from "./components/ourpractice";
 import OurServices from "./components/ourservices";
+import Dashboard from "./pages/Administrator/dashboard";
+import OurExperts from "./components/ourexperts";
 
 const router = createBrowserRouter([
   { path: "/", element: <Homepage /> },
@@ -14,6 +16,10 @@ const router = createBrowserRouter([
   { path: "/ourpractice", element: <OurPractice /> },
   { path: "/ourservices", element: <OurServices /> },
   { path: "/contact", element: <Contact /> },
+  { path: "/dashboard", element: <Dashboard /> },
+  { path: "/ourexperts", element: <OurExperts /> },
+
+
 
 ]);
 
