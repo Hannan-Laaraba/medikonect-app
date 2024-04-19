@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-export default function Dashboard() {
+export default function UserDashboard() {
   const [selectedFile, setSelectedFile] = useState(null);
 
   const handleFileChange = (event) => {

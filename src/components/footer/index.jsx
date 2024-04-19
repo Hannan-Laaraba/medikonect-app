@@ -11,7 +11,7 @@ export default function Footer() {
             <h1 className="text-white font-extrabold">
             <img
             src={Medikonect}
-            class="h-44"
+            class="h-32 "
             alt="medikonect"
           />
             </h1>
