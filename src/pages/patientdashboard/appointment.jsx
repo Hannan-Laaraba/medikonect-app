@@ -53,7 +53,7 @@ export default function Appointment() {
   return (
     <>
       <div className="flex items-center justify-center p-12">
-        <div className="mx-auto w-full max-w-[1050px] bg-gray-100">
+        <div className="mx-auto w-full max-w-[850px] bg-gray-100">
           <form onSubmit={handleSubmit}>
             <div className="mb-5">
               <label
@@ -74,7 +74,7 @@ export default function Appointment() {
             </div>
             <div class="mb-5">
               <label
-                for="phone"
+                for="name"
                 class="mb-3 block text-base font-medium text-[#07074D]"
               >
                 Doctor
@@ -119,12 +119,13 @@ export default function Appointment() {
                     class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
                   />
                 </div>
-                <div class="mb-5">
+              </div>
+              <div class="mb-5">
                   <label
                     for="name"
                     class="mb-3 block text-base font-medium text-[#07074D]"
                   >
-                    Reason
+                    Message
                   </label>
                   <input
                     type="text"
@@ -134,7 +135,6 @@ export default function Appointment() {
                     class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
                   />
                 </div>
-              </div>
             </div>
             <div className="mb-5">
               <label

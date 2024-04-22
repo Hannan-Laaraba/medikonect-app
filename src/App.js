@@ -8,7 +8,7 @@ import OurServices from "./components/ourservices";
 import OurExperts from "./components/ourexperts";
 import ProfDashboard from "./pages/profdashboard";
 import Specialty from "./pages/specialty";
-import Profile from "./pages/profile";
+import Profile from "./pages/profiledetail";
 import Appointment from "./pages/patientdashboard/appointment";
 import PatientDashboard from "./pages/patientdashboard";
 

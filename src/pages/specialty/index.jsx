@@ -1,88 +1,95 @@
 import React, { useState } from "react";
 import Navbar from "../../components/navbar";
 import Img from "../../asset/img.jpg";
+import Provider1 from "../../asset/provider1.jpg";
+import Provider2 from "../../asset/provider2.jpg";
+import Provider3 from "../../asset/provider3.jpg";
+import Dr from "../../asset/dr.jpg";
 import Dr1 from "../../asset/dr1.jpg";
 import Dr2 from "../../asset/dr2.jpg";
 import Dr3 from "../../asset/dr3.jpg";
-import Dr from "../../asset/dr.jpg";
 import Dr4 from "../../asset/dr4.jpg";
 import Dr5 from "../../asset/dr5.jpg";
 import Dr6 from "../../asset/dr6.jpg";
 import Dr7 from "../../asset/dr7.jpg";
-import Provider2 from "../../asset/provider2.jpg";
-import Provider1 from "../../asset/provider1.jpg";
-import Provider3 from "../../asset/provider3.jpg";
+import { Link } from "react-router-dom";
 import CallToAction from "../../components/calltoaction";
 import Footer from "../../components/footer";
+import ProfileDetail from "../profiledetail";
+
+export const providers = [
+  { id: 1, image: Dr, name: "Dr. Hannan Abdul-Aziz", specialty: "Pediatrics" },
+  { id: 2, image: Provider3, name: "Dr. Abdul-Aziz Mohammed", specialty: "Dermatology" },
+  { id: 3, image: Provider2, name: "Dr. D'Angelo Kwakye", specialty: "Neurology" },
+  { id: 4, image: Dr2, name: "Dr. Fredericka Tettey-Lowor", specialty: "Dentistry" },
+  { id: 5, image: Dr7, name: "Dr. Kevin Apo-era", specialty: "Orthopedics" },
+  { id: 6, image: Dr6, name: "Dr. Rofiat Murtala", specialty: "Nutrition and Diet" },
+  { id: 7, image: Dr4, name: "Dr. Samuel Melomey", specialty: "Internal Medicine" },
+  { id: 8, image: Dr1, name: "Dr. Mercy Korkor Essel", specialty: "Physician Assistant" },
+  { id: 9, image: Dr3, name: "Dr. Ernest Obimpeh", specialty: "Ophthalmology" },
+  { id: 10, image: Provider1, name: "Dr. Nadia Kafui", specialty: "Obstetrics and Gynaecology" },
+  { id: 11, image: Dr5, name: "Dr. Williams", specialty: "Psychiatry" },
+];
+
+
+
+// ProviderCard component
+// ProviderCard component
+const ProviderCard = ({ provider, profileView }) => (
+  <div className="max-w-sm mx-auto overflow-hidden bg-gray-100 rounded-lg shadow-lg hover:shadow-[#27115f]">
+    <div className="relative">
+      <img
+        className="w-full h-48 object-cover"
+        src={provider.image}
+        alt="Profile Image"
+        style={{ height: "50vh" }}
+      />
+    </div>
+    <div className="text-center px-6 py-4">
+      <div className="text-xl font-semibold text-gray-800">{provider.name}</div>
+      <br />
+      {/* render ProfileDetail component only if profileView is true */}
+      {profileView && <ProfileDetail providers={[provider]} />}
+
+      <Link to={`/specialty/${provider.id}`} className="text-[#C11574] hover:underline">
+        View Profile
+      </Link>
+    </div>
+  </div>
+);
+
 
 export default function Specialty() {
-  const providers = [
-    { image: Dr, name: "Dr. Ummu Sulaim", specialty: "Pediatrics" },
-    { image: Provider3, name: "Dr. Ummu Sulaim", specialty: "Dermatology" },
-    { image: Provider2, name: "Dr. Ummu Sulaim", specialty: "Neurology" },
-    { image: Dr2, name: "Dr. Ummu Sulaim", specialty: "" },
-    { image: Dr7, name: "Dr. Ummu Sulaim", specialty: "" },
-    { image: Dr6, name: "Dr. Ummu Sulaim", specialty: "" },
-    { image: Dr4, name: "Dr. Ummu Sulaim", specialty: "" },
-    { image: Dr1, name: "Dr. Ummu Sulaim", specialty: "" },
-    { image: Dr3, name: "Dr. Ummu Sulaim", specialty: "" },
-    { image: Provider1, name: "Dr. Ummu Sulaim", specialty: "" },
-    { image: Dr5, name: "Dr. Ummu Sulaim", specialty: "" },
-  ];
-
+  
   const [specialtyFilter, setSpecialtyFilter] = useState("");
   const [nameFilter, setNameFilter] = useState("");
+  const [profileView, setProfileView] = useState(false);
+
+  // Define function to toggle profile view
+  const toggleProfileView = () => setProfileView(!profileView);
 
   // Filter healthcare providers
   const filteredProviders = providers.filter((provider) => {
     // Filter by specialty
-    const specialtyMatch =
-      specialtyFilter === "" || provider.specialty === specialtyFilter;
+    const specialtyMatch = specialtyFilter === "" || provider.specialty === specialtyFilter;
     // Filter by name
-    const nameMatch =
-      nameFilter === "" ||
-      provider.name.toLowerCase().includes(nameFilter.toLowerCase());
+    const nameMatch = nameFilter === "" || provider.name.toLowerCase().includes(nameFilter.toLowerCase());
     return specialtyMatch && nameMatch;
   });
-  
+
   // Get unique specialty options
   const specialtyOptions = Array.from(new Set(providers.map(provider => provider.specialty)));
-
-  // ProviderCard component definition
-  // eslint-disable-next-line
-  const ProviderCard = ({ image, name }) => (
-    <div className="max-w-sm mx-auto overflow-hidden bg-gray-100 rounded-lg shadow-lg hover:shadow-[#27115f]">
-      <div className="relative">
-        <img
-          className="w-full h-48 object-cover"
-          src={image}
-          alt="Profile Image"
-          style={{ height: "50vh" }}
-        />
-      </div>
-      <div className="text-center px-6 py-4">
-        <div className="text-xl font-semibold text-gray-800">{name}</div>
-        <br />
-        <a href="/specialty/:id" className="text-[#C11574] hover:underline">
-          View Profile
-        </a>
-      </div>
-    </div>
-  );
 
   return (
     <>
       <Navbar />
-
-      <div
-        className="bg-cover bg-center bg-fixed"
-        style={{
-          backgroundImage: `linear-gradient( rgb(248,212,238), rgba(0, 0, 0, 0)), url(${Img})`,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          height: "40vh",
-        }}
-      >
+      {profileView && <ProfileDetail providers={providers} />}
+      <div className="bg-cover bg-center bg-fixed" style={{
+        backgroundImage: `linear-gradient( rgb(248,212,238), rgba(0, 0, 0, 0)), url(${Img})`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        height: "50vh",
+      }}>
         <h1 className="text-[#27115f] text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold pt-20 text-center">
           Providers
         </h1>
@@ -117,9 +124,9 @@ export default function Specialty() {
         </p>
       </div>
 
-      {/* Filters section */}
+      
       <div className="flex justify-center gap-4 mb-8">
-        {/* Specialty filter */}
+        {/* filter specialty */}
         <div>
           <label className="block mb-2">Specialty:</label>
           <select
@@ -134,7 +141,7 @@ export default function Specialty() {
           </select>
         </div>
 
-        {/* Name filter */}
+        {/*  filter name */}
         <div>
           <label className="block mb-2">Name:</label>
           <input
@@ -149,7 +156,8 @@ export default function Specialty() {
       {/* Provider cards section */}
       <section className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-4 gap-6 m-10">
         {filteredProviders.map((provider, index) => (
-          <ProviderCard key={index} image={provider.image} name={provider.name} />
+          <ProviderCard key={index} provider={provider} />
+          
         ))}
       </section>
 

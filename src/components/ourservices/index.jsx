@@ -41,7 +41,7 @@ export default function OurServices() {
                 Medical History Management
               </span>
               <p class="text-s  text-[#27115f] ">
-                Improved patient care by providing comprehensive and up-to-date information for informed decision-making, enhanced coordination of care across different settings and specialties, and promotes patient safety .
+                Improved patient care by providing comprehensive and up-to-date information for informed decision-making, enhanced coordination of care across different settings and specialties
               </p>
             </div>
           </a>
@@ -58,7 +58,7 @@ export default function OurServices() {
                 Specialist Referrals
               </span>
               <p class="text-s  text-[#27115f] ">
-                Patients get to consult with healthcare professionals who have advanced training and expertise in specific medical fields or conditions. This ensures that patients receive accurate diagnoses and appropriate treatments tailored to their unique needs.
+                Patients get to consult with healthcare professionals who have advanced training and expertise in specific medical fields or conditions.
               </p>
             </div>
           </a>
@@ -75,7 +75,7 @@ export default function OurServices() {
                 Health Education Resources
               </span>
               <p class="text-s  text-[#27115f] ">
-              Provision of a wealth of information on various health topics, including preventive care, chronic disease management, healthy lifestyle choices, and treatment options.Contents provided are evidence-based and easy to understand.
+              Provision of a wealth of information on various health topics, including preventive care, chronic disease management, healthy lifestyle choices, and treatment options.
               </p>
             </div>
           </a>
