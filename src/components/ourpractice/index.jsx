@@ -47,10 +47,10 @@ export default function OurPractice() {
             </button>
           </div>
         </div>
-        <div>
-          <h1 className="text-[#27115f] text-center text-xl  p-10 md:text-4xl sm:text-3xl ">
-            " Join us in revolutionizing healthcare access and prioritizing your
-            health and wellness."
+        <div className="text-6xl pt-10"> 
+          <h1 className="text-[#27115f] text-center  p-10 md:text-4xl sm:text-3xl ">
+            " Join us in revolutionizing healthcare access and <br/><span className="pt-10">prioritizing your
+            health and wellness."</span>
           </h1>
         </div>
       </div>

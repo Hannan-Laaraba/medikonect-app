@@ -14,20 +14,20 @@ export const  Sidebar = ({sidebarToggle, setUserPage}) => {
           
           <li className="mb-2 rounded hover:shadow hover:bg-violet-700 hover:text-white py-2" onClick={()=> setUserPage('dashboard')}>
             
-            <Link className=" px-2"><i className="fa-solid fa-house inline-block 1-6 h-6 mr-2 -mt-2"></i>Dashboard</Link>
+            <Link className=" px-2"><i className="fa-solid fa-house inline-block 1-6 h-6 mr-2 -mt-2"></i>Profile</Link>
           </li>
           <li className="mb-2 rounded hover:shadow hover:bg-violet-700 hover:text-white py-2"  onClick={()=> setUserPage('patients')}>
             
-            <Link className="px-2"><i className="fa-solid fa-book h-6 mr-2 -mt-2"></i>My Patients</Link>
+            <Link to="/appointment" className="px-2"><i className="fa-solid fa-book h-6 mr-2 -mt-2"></i>Book Appointment</Link>
           </li>
           <li className="mb-2 rounded hover:shadow hover:bg-violet-700 hover:text-white py-2" onClick={()=> setUserPage('schedule')}>
             
-            <Link className="px-2"><i className="fa-solid fa-star h-6 mr-2 -mt-2"></i>My Schedule</Link>
+            <Link className="px-2"><i className="fa-solid fa-star h-6 mr-2 -mt-2"></i>Review</Link>
           </li>
-          <li className="mb-2 rounded hover:shadow hover:bg-violet-700 hover:text-white py-2" onClick={()=> setUserPage('experiences')}>
+          {/* <li className="mb-2 rounded hover:shadow hover:bg-violet-700 hover:text-white py-2" onClick={()=> setUserPage('experiences')}>
             
             <Link className="px-2"><i className="fa-solid fa-briefcase h-6 mr-2 -mt-2"></i>Experiences</Link>
-          </li>
+          </li> */}
         </ul>
     </div>
   );

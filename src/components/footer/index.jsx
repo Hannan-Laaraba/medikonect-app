@@ -3,7 +3,7 @@ import Medikonect from "../../asset/medikonect.png"
 
 export default function Footer() {
   return (
-    <div className="mt-8 bg-[#27115f] pt-9">
+    <div className="mt- bg-[#27115f] pt-9">
     <div className="mx-auto w-full max-w-[1166px] px-4 xl:px-0">
       <div className="flex flex-col justify-between sm:px-[18px] md:flex-row md:px-10">
         <div className="md:w-[316px]">
@@ -44,13 +44,13 @@ export default function Footer() {
               </div>
               <div class="ml-[18px]">
                 <a
-                  href="tel:+911800123444"
-                  class="font-Inter text-[14px] font-medium text-white"
+                  href="tel:+233 279944758"
+                  class="font-Inter text-[14px] font-medium text-white hover:text-[#C11574]"
                 >
-                  +233 56123444
+                  +233 279944758
                 </a>
                 <p class="font-Inter text-[12px] font-medium text-white">
-                  Support Number
+                  Give us a call
                 </p>
               </div>
             </div>
@@ -71,13 +71,13 @@ export default function Footer() {
               </div>
               <div class="ml-[18px]">
                 <a
-                  href="mailto:help@lorem.com"
-                  class="font-Inter text-[14px] font-medium text-[#fff]"
+                  href="mailto:help@medikonect.com"
+                  class="font-Inter text-[14px] font-medium text-[#fff] hover:text-[#C11574]"
                 >
-                  help@lorem.com
+                  help@medikonect.com
                 </a>
                 <p class="font-Inter text-[12px] font-medium text-[#fff]">
-                  Support Email
+                  Send a message
                 </p>
               </div>
             </div>
@@ -97,15 +97,15 @@ export default function Footer() {
                 </svg>
               </div>
               <div class="ml-[18px]">
-                <a
-                  href="mailto:ladyash2014@gmail.com"
-                  class="font-Inter text-[14px] font-medium text-[#fff]"
-                >
-                  Accra, Ghana
-                </a>
-                <p class="font-Inter text-[12px] font-medium text-white">
-                  Address
+              <p class="font-Inter text-[14px] font-medium text-white">
+              Accra, Ghana
                 </p>
+                <a
+                  href="https://maps.app.goo.gl/vdpVBMZW9hUTyhWP7"
+                  class="font-Inter text-[14px] font-medium text-[#fff] hover:text-[#C11574]"
+                >
+                  View map
+                </a>
               </div>
             </div>
           </div>
@@ -117,7 +117,7 @@ export default function Footer() {
               <ul>
                 <li class="mt-[15px]">
                   <a
-                    class="text-deutziawhite hover:text-deutziawhite/80 font-inter text-[15px] font-normal hover:font-semibold"
+                    class="text-deutziawhite hover:text-[#C11574] font-inter text-[15px] font-normal hover:font-semibold"
                     href="/"
                   >
                     Home
@@ -125,7 +125,7 @@ export default function Footer() {
                 </li>
                 <li class="mt-[15px]">
                   <a
-                    class="text-deutziawhite hover:text-deutziawhite/80 font-inter text-[15px] font-normal hover:font-semibold"
+                    class="text-deutziawhite hover:text-[#C11574] font-inter text-[15px] font-normal hover:font-semibold"
                     href="/our-tutors"
                   >
                     Our Practice
@@ -133,7 +133,7 @@ export default function Footer() {
                 </li>
                 <li class="mt-[15px]">
                   <a
-                    class="text-deutziawhite hover:text-deutziawhite/80 font-inter text-[15px] font-normal hover:font-semibold"
+                    class="text-deutziawhite hover:text-[#C11574] font-inter text-[15px] font-normal hover:font-semibold"
                     href="/become-a-tutor"
                   >
                     Services
@@ -141,7 +141,7 @@ export default function Footer() {
                 </li>
                 <li class="mt-[15px]">
                   <a
-                    class="text-deutziawhite hover:text-deutziawhite/80 font-inter text-[15px] font-normal hover:font-semibold"
+                    class="text-deutziawhite hover:text-[#C11574] font-inter text-[15px] font-normal hover:font-semibold"
                     href="/plans-and-pricing"
                   >
                     Contact
@@ -149,7 +149,7 @@ export default function Footer() {
                 </li>
                 <li class="mt-[15px]">
                   <a
-                    class="text-deutziawhite hover:text-deutziawhite/80 font-inter text-[15px] font-normal hover:font-semibold"
+                    class="text-deutziawhite hover:text-[#C11574] font-inter text-[15px] font-normal hover:font-semibold"
                     href="/terms-and-conditions"
                   >
                     Terms and conditions
@@ -157,7 +157,7 @@ export default function Footer() {
                 </li>
                 <li class="mt-[15px]">
                   <a
-                    class="text-deutziawhite hover:text-deutziawhite/80 font-inter text-[15px] font-normal hover:font-semibold"
+                    class="text-deutziawhite hover:text-[#C11574] font-inter text-[15px] font-normal hover:font-semibold"
                     href="/privacy-policy"
                   >
                     Privcay policy
