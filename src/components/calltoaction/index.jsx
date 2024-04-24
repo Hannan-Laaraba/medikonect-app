@@ -23,7 +23,7 @@ export default function CallToAction() {
 
           <div class="mt-10">
             <a
-              href="/userdashboard"
+              href="/signin"
               class="px-5 py-3 text-lg tracking-wider text-white bg-[#C11574] rounded-lg md:px-8 hover:bg-[#931058] group"
             >
               <span>Book Consultation</span>{" "}

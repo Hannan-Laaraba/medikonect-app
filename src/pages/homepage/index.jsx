@@ -8,7 +8,7 @@ import CallToAction from "../../components/calltoaction";
 import Specialties from "../../components/specialties";
 import OurAdvantages from "../../components/ouradvantages";
 import OurExperts from "../../components/ourexperts";
-import Contact from "../../components/contact";
+// import Contact from "../../components/contact";
 
 
 
@@ -23,7 +23,7 @@ export default function Homepage() {
         <Specialties/>
         <OurAdvantages/>
         <OurExperts />
-        <Contact />
+        {/* <Contact /> */}
         <Footer />
         </>
     )

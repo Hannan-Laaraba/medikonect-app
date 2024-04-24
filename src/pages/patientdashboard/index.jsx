@@ -4,14 +4,14 @@ import Appointment from "./appointment";
 import Review from "./review";
 
 export default function PatientDashboard() {
-  const [showAppointment, setShowAppointment] = useState(false);
-  const [showReview, setShowReview] = useState(false);
+  const [component, showComponent] = useState("");
+  // const [showReview, setShowReview] = useState("");
   return (
     <>
-      <div className="flex h-screen bg-gray-100">
-        <div className="hidden md:flex flex-col w-64 bg-white">
+      <div className="flex flex-col md:flex-row h-screen bg-gray-100">
+        <div className="md:w-64 bg-gray-900">
           <div className="my-2 mb-2">
-            <img src={Medikonect} alt="medikonect" style={{ height: "50px" }} />
+            <img src={Medikonect} alt="medikonect"  className="h-12" />
           </div>
           <div className="flex flex-col flex-1 overflow-y-auto">
             <nav className="flex-1 px-2 py-4 bg-gray-800">
@@ -33,7 +33,7 @@ export default function PatientDashboard() {
               <a
                 href="#"
                 className="flex items-center px-4 py-2 mt-2 text-gray-100 hover:bg-gray-700"
-                onClick={() => setShowAppointment(!showAppointment)}
+                onClick={() => showComponent("show-appointment")}
               >
                 <i className="fa-regular fa-calendar-check pr-2"></i>
                 Appointments
@@ -41,7 +41,7 @@ export default function PatientDashboard() {
               <a
                 href="#"
                 className="flex items-center px-4 py-2 mt-2 text-gray-100 hover:bg-gray-700"
-                onClick={() => setShowReview(!showReview)}
+                onClick={() => showComponent("showReview")}
               >
                 <i className="fa-solid fa-hospital-user pr-2"></i>
                 Reviews
@@ -63,7 +63,7 @@ export default function PatientDashboard() {
           </div>
         </div>
 
-        <div className="flex flex-col flex-1 overflow-y-auto">
+        <div className="flex-1 flex flex-col">
           <div className="flex items-center justify-between h-16 bg-white border-b border-gray-200">
             <div className="flex items-center px-4">
               <input
@@ -91,11 +91,11 @@ export default function PatientDashboard() {
               </button>
             </div>
           </div>
-          <div className="p-4">
+          <div className="p-4 flex-1 overflow-y-auto">
             <h1 className="text-2xl font-bold">Laaraba Ashrawee's Dashboard</h1>
             {/* Conditional rendering of the  component */}
-            {showAppointment && <Appointment />}
-            {showReview && <Review />}
+            {component === "show-appointment" && <Appointment />}
+            {component === "showReview" && <Review />}
           </div>
         </div>
       </div>

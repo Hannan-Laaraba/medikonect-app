@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { providers } from "../specialty";
 import Img from "../../asset/img.jpg";
@@ -8,6 +8,25 @@ import "./styles.css";
 
 function ProfileDetail() {
   const { id } = useParams();
+
+  const [reviews, setReviews] = useState([]);
+
+    // useEffect(() => {
+    //     //fetch from backend
+    //     const url = new URL (`${process.env.MEDIKONECT_API}/reviews`);
+
+    //     fetch(url)
+    //     .then((response) => response.json())
+    //     .then((data) => {
+    //       console.log(data)
+    //       // setReviews(data.Reviews);
+    //     })
+    //     .catch((error) => {
+    //       console.error("Error fetching data:", error);
+    //     });
+    //  },[]);
+
+
 
   // Find the provider with the matching ID
   const provider = providers.find((provider) => provider.id.toString() === id);
@@ -133,7 +152,10 @@ function ProfileDetail() {
             <p className="text-[#27115f] p-4 text-center text-xl font-bold">
               Top Reviews
             </p>
-            <div class="flex items-start">
+            {reviews.map((data)=>{
+              return (
+                <>
+                  <div class="flex items-start">
               <div class="flex-shrink-0">
                 <div class="inline-block relative">
                   <div class="relative w-16 h-16 rounded-full overflow-hidden">
@@ -155,7 +177,7 @@ function ProfileDetail() {
               </div>
               <div class="ml-6">
                 <p class="flex items-baseline">
-                  <span class="text-gray-600 font-bold">Richie Rich</span>
+                  <span class="text-gray-600 font-bold">{data.name}</span>
                   <span class="ml-2 text-green-600 text-xs"></span>
                 </p>
                 <div class="flex items-center mt-1">
@@ -197,12 +219,9 @@ function ProfileDetail() {
                 </div>
 
                 <div class="mt-3">
-                  <span class="font-bold">Sapien consequat eleifend!</span>
+                  <span class="font-bold">{data.title}</span>
                   <p class="mt-1">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-                    sed do eiusmod tempor incididunt ut labore et dolore magna
-                    aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                    ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    {data.description}
                   </p>
                 </div>
                 <div class="flex items-center justify-between mt-4 text-sm text-gray-600 fill-current">
@@ -242,6 +261,9 @@ function ProfileDetail() {
                 </div>
               </div>
             </div>
+                </>
+              )
+            })}
             <br />
             <div class="flex items-start">
               <div class="flex-shrink-0">

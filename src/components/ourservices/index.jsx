@@ -3,7 +3,7 @@ import React from "react";
 export default function OurServices() {
   return (
     <>
-      <div className="p-20 text-[#27115f]">
+      <div className="p-20 text-[#27115f] " id="services">
       <div class="text-center p-10">
         <h1 class="text-s p-4">WHY WE STAND OUT</h1>
         <p className="text-5xl font-bold">Our Services</p>

@@ -48,8 +48,8 @@ export default function SignIn() {
   };
 
   return (
-    <main className="mx-auto flex min-h-screen w-full items-center justify-center bg-gray-900 text-white">
-      <section className="flex w-[30rem] flex-col space-y-10">
+    <main className="mx-auto flex min-h-screen w-full items-center  justify-center bg-[#db92ba] text-white">
+      <section className="flex w-[30rem] flex-col space-y-10 bg-gray-900 p-8 rounded-lg shadow-md">
         <div className="text-center text-4xl font-medium">Log In</div>
 
         <div className="flex justify-between w-full transform border-b-2 bg-transparent text-lg duration-300 focus-within:border-indigo-500">
@@ -80,7 +80,7 @@ export default function SignIn() {
 
         <button
           onClick={handleSubmit}
-          className="transform rounded-sm bg-indigo-600 py-2 font-bold duration-300 hover:bg-indigo-400"
+          className="transform rounded-sm bg-[#C11574] py-2 font-bold duration-300 hover:bg-[#db92ba]"
         ><Link to="/patientdashboard">
           LOG IN</Link>
         </button>
@@ -96,7 +96,7 @@ export default function SignIn() {
           No account?
           <a
             href="#"
-            className="font-medium text-indigo-500 underline-offset-4 hover:underline"
+            className="font-medium text-[#C11574] underline-offset-4 hover:underline"
           >
             Create One
           </a>

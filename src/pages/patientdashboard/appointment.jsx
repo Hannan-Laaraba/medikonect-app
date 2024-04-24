@@ -134,12 +134,12 @@ export default function Appointment() {
     setFormData({ ...formData, [name]: value });
   };
 
-  const toggleMarkForDeletion = (index) => {
-    const updatedAppointments = [...appointments];
-    updatedAppointments[index].markedForDeletion =
-      !updatedAppointments[index].markedForDeletion;
-    setAppointments(updatedAppointments);
-  };
+  // const toggleMarkForDeletion = (index) => {
+  //   const updatedAppointments = [...appointments];
+  //   updatedAppointments[index].markedForDeletion =
+  //     !updatedAppointments[index].markedForDeletion;
+  //   setAppointments(updatedAppointments);
+  // };
 
   return (
     <>
