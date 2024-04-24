@@ -4,6 +4,7 @@ import Img from "../../asset/img.jpg";
 import Provider1 from "../../asset/provider1.jpg";
 import Provider2 from "../../asset/provider2.jpg";
 import Provider3 from "../../asset/provider3.jpg";
+import Provider4 from "../../asset/provider4.jpg";
 import Dr from "../../asset/dr.jpg";
 import Dr1 from "../../asset/dr1.jpg";
 import Dr2 from "../../asset/dr2.jpg";
@@ -23,17 +24,17 @@ export const providers = [
   { id: 3, image: Provider2, name: "Dr. D'Angelo Kwakye", specialty: "Neurology" },
   { id: 4, image: Dr2, name: "Dr. Fredericka Tettey-Lowor", specialty: "Dentistry" },
   { id: 5, image: Dr7, name: "Dr. Kevin Apo-era", specialty: "Orthopedics" },
-  { id: 6, image: Dr6, name: "Dr. Rofiat Murtala", specialty: "Nutrition and Diet" },
+  { id: 6, image: Provider4, name: "Dr. Samantha Adda", specialty: "Nutrition and Diet" },
   { id: 7, image: Dr4, name: "Dr. Samuel Melomey", specialty: "Internal Medicine" },
   { id: 8, image: Dr1, name: "Dr. Mercy Korkor Essel", specialty: "Physician Assistant" },
   { id: 9, image: Dr3, name: "Dr. Ernest Obimpeh", specialty: "Ophthalmology" },
   { id: 10, image: Provider1, name: "Dr. Nadia Kafui", specialty: "Obstetrics and Gynaecology" },
   { id: 11, image: Dr5, name: "Dr. Williams", specialty: "Psychiatry" },
+  { id: 12, image: Dr6, name: "Dr. Rofiat Murtala", specialty: "Psychiatry" },
+
 ];
 
 
-
-// ProviderCard component
 // ProviderCard component
 const ProviderCard = ({ provider, profileView }) => (
   <div className="max-w-sm mx-auto overflow-hidden bg-gray-100 rounded-lg shadow-lg hover:shadow-[#27115f]">
@@ -88,12 +89,12 @@ export default function Specialty() {
         backgroundImage: `linear-gradient( rgb(248,212,238), rgba(0, 0, 0, 0)), url(${Img})`,
         backgroundSize: "cover",
         backgroundPosition: "center",
-        height: "50vh",
+        height: "45vh",
       }}>
-        <h1 className="text-[#27115f] text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold pt-20 text-center">
+        <h1 className="text-[#27115f] text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold pt-14 text-center">
           Providers
         </h1>
-        <h3 className="text-[#27115f] text-xl sm:text-2xl md:text-3xl lg:text-5xl  pt-20 text-center">
+        <h3 className="text-[#27115f] text-xl sm:text-2xl md:text-3xl lg:text-4xl  pt-12 text-center">
           Experienced Healthcare Professionals
         </h3>
       </div>

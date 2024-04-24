@@ -11,11 +11,7 @@ export default function PatientDashboard() {
       <div className="flex h-screen bg-gray-100">
         <div className="hidden md:flex flex-col w-64 bg-white">
           <div className="my-2 mb-2">
-            <img
-              src={Medikonect}
-              alt="medikonect"
-              style={{ height: "50px" }}
-            />
+            <img src={Medikonect} alt="medikonect" style={{ height: "50px" }} />
           </div>
           <div className="flex flex-col flex-1 overflow-y-auto">
             <nav className="flex-1 px-2 py-4 bg-gray-800">
@@ -57,6 +53,12 @@ export default function PatientDashboard() {
                 <i className="fa-solid fa-gear pr-2"></i>
                 Settings
               </a>
+              <a
+                href="#"
+                className="flex items-center px-4 py-2 mt-2 text-gray-100 hover:bg-gray-700"
+              >
+                <i class="fa-solid fa-user pr-2"></i> Logout
+              </a>
             </nav>
           </div>
         </div>
@@ -90,7 +92,7 @@ export default function PatientDashboard() {
             </div>
           </div>
           <div className="p-4">
-            <h1 className="text-2xl font-bold">Patient's Dashboard</h1>
+            <h1 className="text-2xl font-bold">Laaraba Ashrawee's Dashboard</h1>
             {/* Conditional rendering of the  component */}
             {showAppointment && <Appointment />}
             {showReview && <Review />}

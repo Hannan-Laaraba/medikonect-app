@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 export default function SignIn() {
   const [email, setEmail] = useState("");
@@ -80,8 +81,8 @@ export default function SignIn() {
         <button
           onClick={handleSubmit}
           className="transform rounded-sm bg-indigo-600 py-2 font-bold duration-300 hover:bg-indigo-400"
-        >
-          LOG IN
+        ><Link to="/patientdashboard">
+          LOG IN</Link>
         </button>
 
         <a

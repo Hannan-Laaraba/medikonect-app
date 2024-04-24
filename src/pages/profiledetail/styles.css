@@ -1,0 +1,9 @@
+.custom-bullet::before {
+    content: "";
+    display: inline-block;
+    width: 0.3rem; /* Adjust size of bullet point */
+    height: 0.3rem; /* Adjust size of bullet point */
+    background-color: #C11574; /* Change bullet color */
+    border-radius: 50%; /* Ensures the bullet point is circular */
+    margin-right: 0.5rem; /* Adjust spacing between bullet point and text */
+  }
