@@ -219,13 +219,15 @@ export default function Appointment() {
               >
                 Doctor
               </label>
-              <input
-                type="text"
-                name="name"
-                id="name"
-                placeholder="Doctor's Name"
-                class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
-              />
+              <select className="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md">
+              <option> Select a doctor</option>
+             <option> Dr. Hannan Abdul-Aziz</option>
+             <option>Dr. Fredericka Tettey-Lowor</option>
+             <option>Dr.Nadia Kafui</option>
+             <option>Dr. D'Angelo Kwakye</option>
+             <option>Dr. Kevin Apo-era</option>
+              </select>
+             
             </div>
             <div class="-mx-3 flex flex-wrap">
               <div class="w-full px-3 sm:w-1/2">
@@ -260,22 +262,26 @@ export default function Appointment() {
                   />
                 </div>
               </div>
-              <div class="mb-5">
+             
+            </div>
+            <div class="mb-5">
                 <label
                   for="name"
                   class="mb-3 block text-base font-medium text-[#07074D]"
                 >
-                  Message
+                  Reason
                 </label>
                 <input
-                  type="text"
-                  name="name"
-                  id="name"
-                  placeholder="Give your doctor more information"
-                  class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
-                />
+                type="text"
+                name="name"
+                id="name"
+                placeholder="  "
+                value={formData.reason}
+                onChange={handleChange}
+                className="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
+              />
+             
               </div>
-            </div>
             <div className="mb-5">
               <label
                 htmlFor="status"

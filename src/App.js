@@ -11,6 +11,7 @@ import Specialty from "./pages/specialty";
 import Profile from "./pages/profiledetail";
 import Appointment from "./pages/patientdashboard/appointment";
 import PatientDashboard from "./pages/patientdashboard";
+import Review from "./pages/patientdashboard/review";
 
 const router = createBrowserRouter([
   { path: "/", element: <Homepage /> },
@@ -23,10 +24,8 @@ const router = createBrowserRouter([
   { path: "/specialty", element: <Specialty /> },
   { path: "/specialty/:id", element: <Profile /> },
   { path: "/appointment", element: <Appointment /> },
-
+  { path: "/review", element: <Review /> },
   { path: "/ourexperts", element: <OurExperts /> },
-
-
 
 ]);
 

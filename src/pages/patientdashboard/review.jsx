@@ -9,73 +9,71 @@ export default function Review() {
     reviewMessage: "",
   });
 
-
-
-  const [reviews, setReviews] = useState([
-    {
-      id: 1,
-      name: "Ashrawee",
-      doctor: "Dr. Apo-era",
-      rating: 4,
-      reviewMessage: "Excellent service!",
-    },
-    {
-      id: 2,
-      name: "Laaraba",
-      doctor: "Dr. Fredericka",
-      rating: 5,
-      reviewMessage: "Highly recommended!",
-    },
-  ]);
+  // const [reviews, setReviews] = useState([
+  //   {
+  //     id: 1,
+  //     name: "Ashrawee",
+  //     doctor: "Dr. Apo-era",
+  //     rating: 4,
+  //     reviewMessage: "Excellent service!",
+  //   },
+  //   {
+  //     id: 2,
+  //     name: "Laaraba",
+  //     doctor: "Dr. Fredericka",
+  //     rating: 5,
+  //     reviewMessage: "Highly recommended!",
+  //   },
+  // ]);
 
   //using json data
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    const newReview = {
-      id: reviews.length + 1,
-      ...formData,
-    };
-    setReviews([...reviews, newReview]);
-    setFormData({
-      name: "",
-      doctor: "",
-      rating: "",
-      reviewMessage: "",
-    });
+  // const handleSubmit = (e) => {
+  //   e.preventDefault();
+  //   const newReview = {
+  //     id: reviews.length + 1,
+  //     ...formData,
+  //   };
+  //   setReviews([...reviews, newReview]);
+  //   setFormData({
+  //     name: "",
+  //     doctor: "",
+  //     rating: "",
+  //     reviewMessage: "",
+  //   });
+  // };
+
+  //fetching from backend
+  const [reviews, setReviews] = useState([]);
+
+  useEffect(() => {
+    fetchReviews();
+  }, []);
+
+  const fetchReviews = async () => {
+    try {
+      const response = await axios.get (`${process.env.MEDIKONECT_API}/reviews`);
+      setReviews(response.data);
+    } catch (error) {
+      console.error("Error fetching reviews:", error);
+    }
   };
 
-//fetching from backend
-//   const [reviews, setReviews] = useState([]);
-
-//   useEffect(() => {
-//     fetchReviews();
-//   }, []);
-
-//   const fetchReviews = async () => {
-//     try {
-//       const response = await axios.get("/api/reviews");
-//       setReviews(response.data);
-//     } catch (error) {
-//       console.error("Error fetching reviews:", error);
-//     }
-//   };
-
-//   const handleSubmit = async (e) => {
-//     e.preventDefault();
-//     try {
-//       const response = await axios.post("/api/reviews", formData);
-//       setReviews([...reviews, response.data]);
-//       setFormData({
-//         name: "",
-//         doctor: "",
-//         rating: "",
-//         reviewMessage: "",
-//       });
-//     } catch (error) {
-//       console.error("Error submitting review:", error);
-//     }
-//   };
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const response = await axios.post(`${process.env.MEDIKONECT_API}/reviews`, formData);
+      setReviews([...reviews, response.data]);
+      setFormData({
+        name: "",
+        doctor: "",
+        rating: "",
+        reviewMessage: "",
+      });
+    } catch (error) {
+      console.error("Error submitting review:", error);
+    }
+  };
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -84,7 +82,7 @@ export default function Review() {
 
   return (
     <>
-       <div className="mx-auto w-full max-w-[850px] text-[#27115f] bg-gray-100 p-8 rounded-lg shadow-md">
+      <div className="mx-auto w-full max-w-[850px] text-[#27115f] bg-gray-100 p-8 rounded-lg shadow-md">
         <h2 className="text-lg font-bold mb-4">Existing Reviews</h2>
         <div className="divide-y divide-gray-300">
           {reviews.map((review) => (
@@ -96,7 +94,8 @@ export default function Review() {
             </div>
           ))}
         </div>
-        </div><br/>
+      </div>
+      <br />
       <form
         onSubmit={handleSubmit}
         className="mx-auto w-full max-w-[850px] text-[#27115f] bg-gray-100 p-8 rounded-lg shadow-md"

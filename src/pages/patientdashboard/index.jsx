@@ -92,7 +92,7 @@ export default function PatientDashboard() {
             </div>
           </div>
           <div className="p-4 flex-1 overflow-y-auto">
-            <h1 className="text-2xl font-bold">Laaraba Ashrawee's Dashboard</h1>
+            <h1 className="text-2xl font-bold"></h1>
             {/* Conditional rendering of the  component */}
             {component === "show-appointment" && <Appointment />}
             {component === "showReview" && <Review />}

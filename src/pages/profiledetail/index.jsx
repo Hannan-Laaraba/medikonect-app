@@ -11,22 +11,20 @@ function ProfileDetail() {
 
   const [reviews, setReviews] = useState([]);
 
-    // useEffect(() => {
-    //     //fetch from backend
-    //     const url = new URL (`${process.env.MEDIKONECT_API}/reviews`);
+  // useEffect(() => {
+  //     //fetch from backend
+  //     const url = new URL (`${process.env.MEDIKONECT_API}/reviews`);
 
-    //     fetch(url)
-    //     .then((response) => response.json())
-    //     .then((data) => {
-    //       console.log(data)
-    //       // setReviews(data.Reviews);
-    //     })
-    //     .catch((error) => {
-    //       console.error("Error fetching data:", error);
-    //     });
-    //  },[]);
-
-
+  // //     fetch(url)
+  // //     .then((response) => response.json())
+  // //     .then((data) => {
+  // //       console.log(data)
+  // //        setReviews(data.Reviews);
+  // //     })
+  // //     .catch((error) => {
+  // //       console.error("Error fetching data:", error);
+  // //     });
+  // //  },[]);
 
   // Find the provider with the matching ID
   const provider = providers.find((provider) => provider.id.toString() === id);
@@ -110,7 +108,10 @@ function ProfileDetail() {
                     <div class="flex items-center ">
                       <div class="flex-shrink-0"></div>
                       <div class="flex-1 min-w-0 ms-4">
-                        <Link to="/signin" className="text-white bg-[#C11574] hover:bg-[#890b50] focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">
+                        <Link
+                          to="/signin"
+                          className="text-white bg-[#C11574] hover:bg-[#890b50] focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
+                        >
                           Book Me
                         </Link>
                         <button className="text-white bg-[#C11574] hover:bg-[#890b50] focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">
@@ -152,117 +153,82 @@ function ProfileDetail() {
             <p className="text-[#27115f] p-4 text-center text-xl font-bold">
               Top Reviews
             </p>
-            {reviews.map((data)=>{
+            {reviews.map((review) => {
               return (
                 <>
-                  <div class="flex items-start">
-              <div class="flex-shrink-0">
-                <div class="inline-block relative">
-                  <div class="relative w-16 h-16 rounded-full overflow-hidden">
-                    <img
-                      class="absolute top-0 left-0 w-full h-full bg-cover object-fit object-cover"
-                      src="https://picsum.photos/id/646/200/200"
-                      alt="Profile picture"
-                    />
-                    <div class="absolute top-0 left-0 w-full h-full rounded-full shadow-inner"></div>
-                  </div>
-                  <svg
-                    class="fill-current text-white bg-green-600 rounded-full p-1 absolute bottom-0 right-0 w-6 h-6 -mx-1 -my-1"
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 20 20"
-                  >
-                    <path d="M19 11a7.5 7.5 0 0 1-3.5 5.94L10 20l-5.5-3.06A7.5 7.5 0 0 1 1 11V3c3.38 0 6.5-1.12 9-3 2.5 1.89 5.62 3 9 3v8zm-9 1.08l2.92 2.04-1.03-3.41 2.84-2.15-3.56-.08L10 5.12 8.83 8.48l-3.56.08L8.1 10.7l-1.03 3.4L10 12.09z" />
-                  </svg>
-                </div>
-              </div>
-              <div class="ml-6">
-                <p class="flex items-baseline">
-                  <span class="text-gray-600 font-bold">{data.name}</span>
-                  <span class="ml-2 text-green-600 text-xs"></span>
-                </p>
-                <div class="flex items-center mt-1">
-                  <svg
-                    class="w-4 h-4 fill-current text-yellow-600"
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 20 20"
-                  >
-                    <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
-                  </svg>
-                  <svg
-                    class="w-4 h-4 fill-current text-yellow-600"
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 20 20"
-                  >
-                    <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
-                  </svg>
-                  <svg
-                    class="w-4 h-4 fill-current text-yellow-600"
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 20 20"
-                  >
-                    <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
-                  </svg>
-                  <svg
-                    class="w-4 h-4 fill-current text-yellow-600"
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 20 20"
-                  >
-                    <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
-                  </svg>
-                  <svg
-                    class="w-4 h-4 fill-current text-gray-400"
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 20 20"
-                  >
-                    <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
-                  </svg>
-                </div>
+                  <div key={review.id} class="flex items-start">
+                    <div class="flex-shrink-0">
+                      <div class="inline-block relative">
+                        <div class="relative w-16 h-16 rounded-full overflow-hidden">
+                          <img
+                            class="absolute top-0 left-0 w-full h-full bg-cover object-fit object-cover"
+                            src="https://picsum.photos/id/646/200/200"
+                            alt="Profile picture"
+                          />
+                          <div class="absolute top-0 left-0 w-full h-full rounded-full shadow-inner"></div>
+                        </div>
+                        <svg
+                          class="fill-current text-white bg-green-600 rounded-full p-1 absolute bottom-0 right-0 w-6 h-6 -mx-1 -my-1"
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 20 20"
+                        >
+                          <path d="M19 11a7.5 7.5 0 0 1-3.5 5.94L10 20l-5.5-3.06A7.5 7.5 0 0 1 1 11V3c3.38 0 6.5-1.12 9-3 2.5 1.89 5.62 3 9 3v8zm-9 1.08l2.92 2.04-1.03-3.41 2.84-2.15-3.56-.08L10 5.12 8.83 8.48l-3.56.08L8.1 10.7l-1.03 3.4L10 12.09z" />
+                        </svg>
+                      </div>
+                    </div>
+                    <div class="ml-6">
+                      <p class="flex items-baseline">
+                        <span class="text-gray-600 font-bold">
+                          {review.name}
+                        </span>
+                        <span class="ml-2 text-green-600 text-xs"></span>
+                      </p>
+                      <div class="flex items-center mt-1">
+                        <svg
+                          class="w-4 h-4 fill-current text-yellow-600"
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 20 20"
+                        >
+                          <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
+                        </svg>
+                        <svg
+                          class="w-4 h-4 fill-current text-yellow-600"
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 20 20"
+                        >
+                          <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
+                        </svg>
+                        <svg
+                          class="w-4 h-4 fill-current text-yellow-600"
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 20 20"
+                        >
+                          <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
+                        </svg>
+                        <svg
+                          class="w-4 h-4 fill-current text-yellow-600"
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 20 20"
+                        >
+                          <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
+                        </svg>
+                        <svg
+                          class="w-4 h-4 fill-current text-gray-400"
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 20 20"
+                        >
+                          <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
+                        </svg>
+                      </div>
 
-                <div class="mt-3">
-                  <span class="font-bold">{data.title}</span>
-                  <p class="mt-1">
-                    {data.description}
-                  </p>
-                </div>
-                <div class="flex items-center justify-between mt-4 text-sm text-gray-600 fill-current">
-                  <button class="flex items-center">
-                    <svg
-                      class="w-3 h-3"
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 20 20"
-                    >
-                      <path d="M5.08 12.16A2.99 2.99 0 0 1 0 10a3 3 0 0 1 5.08-2.16l8.94-4.47a3 3 0 1 1 .9 1.79L5.98 9.63a3.03 3.03 0 0 1 0 .74l8.94 4.47A2.99 2.99 0 0 1 20 17a3 3 0 1 1-5.98-.37l-8.94-4.47z" />
-                    </svg>
-                    <span class="ml-2">Share</span>
-                  </button>
-                  <div class="flex items-center">
-                    <span>Was this review helplful?</span>
-                    <button class="flex items-center ml-6">
-                      <svg
-                        class="w-3 h-3"
-                        xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 20 20"
-                      >
-                        <path d="M11 0h1v3l3 7v8a2 2 0 0 1-2 2H5c-1.1 0-2.31-.84-2.7-1.88L0 12v-2a2 2 0 0 1 2-2h7V2a2 2 0 0 1 2-2zm6 10h3v10h-3V10z" />
-                      </svg>
-                      <span class="ml-2">56</span>
-                    </button>
-                    <button class="flex items-center ml-4">
-                      <svg
-                        class="w-3 h-3"
-                        xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 20 20"
-                      >
-                        <path d="M11 20a2 2 0 0 1-2-2v-6H2a2 2 0 0 1-2-2V8l2.3-6.12A3.11 3.11 0 0 1 5 0h8a2 2 0 0 1 2 2v8l-3 7v3h-1zm6-10V0h3v10h-3z" />
-                      </svg>
-                      <span class="ml-2">10</span>
-                    </button>
+                      <div class="mt-3">
+                        <span class="font-bold">{review.title}</span>
+                        <p class="mt-1">{review.content}</p>
+                      </div>
+                    </div>
                   </div>
-                </div>
-              </div>
-            </div>
                 </>
-              )
+              );
             })}
             <br />
             <div class="flex items-start">
@@ -327,7 +293,6 @@ function ProfileDetail() {
                     <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
                   </svg>
                 </div>
-
                 <div class="mt-3">
                   <span class="font-bold">Sapien consequat eleifend!</span>
                   <p class="mt-1">
@@ -371,6 +336,13 @@ function ProfileDetail() {
                       <span class="ml-2">10</span>
                     </button>
                   </div>
+                </div>
+
+                <div className="pt-20 ">
+                  {" "}
+                  <button className="text-white bg-[#C11574] hover:bg-[#890b50] focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">
+                    Leave review 
+                  </button>
                 </div>
               </div>
             </div>
