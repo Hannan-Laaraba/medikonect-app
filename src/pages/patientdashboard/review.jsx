@@ -5,46 +5,11 @@ export default function Review() {
   const [formData, setFormData] = useState({
     name: "",
     doctor: "",
-    rating: "",
+    rating: 1, // Default rating set to 1
     reviewMessage: "",
   });
-
-  // const [reviews, setReviews] = useState([
-  //   {
-  //     id: 1,
-  //     name: "Ashrawee",
-  //     doctor: "Dr. Apo-era",
-  //     rating: 4,
-  //     reviewMessage: "Excellent service!",
-  //   },
-  //   {
-  //     id: 2,
-  //     name: "Laaraba",
-  //     doctor: "Dr. Fredericka",
-  //     rating: 5,
-  //     reviewMessage: "Highly recommended!",
-  //   },
-  // ]);
-
-  //using json data
-
-  // const handleSubmit = (e) => {
-  //   e.preventDefault();
-  //   const newReview = {
-  //     id: reviews.length + 1,
-  //     ...formData,
-  //   };
-  //   setReviews([...reviews, newReview]);
-  //   setFormData({
-  //     name: "",
-  //     doctor: "",
-  //     rating: "",
-  //     reviewMessage: "",
-  //   });
-  // };
-
-  //fetching from backend
   const [reviews, setReviews] = useState([]);
+  const [error, setError] = useState(null); // State variable for error handling
 
   useEffect(() => {
     fetchReviews();
@@ -52,26 +17,32 @@ export default function Review() {
 
   const fetchReviews = async () => {
     try {
-      const response = await axios.get (`${process.env.MEDIKONECT_API}/reviews`);
+      const response = await axios.get(`${process.env.MEDIKONECT_API}/reviews`);
       setReviews(response.data);
     } catch (error) {
       console.error("Error fetching reviews:", error);
+      setError("Failed to fetch reviews. Please try again later."); // Set error message
     }
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    if (!formData.name || !formData.doctor || !formData.reviewMessage) {
+      setError("Please fill in all the required fields."); // Set error message for incomplete form
+      return;
+    }
     try {
       const response = await axios.post(`${process.env.MEDIKONECT_API}/reviews`, formData);
       setReviews([...reviews, response.data]);
       setFormData({
         name: "",
         doctor: "",
-        rating: "",
+        rating: 1, // Reset rating to default value after submission
         reviewMessage: "",
       });
     } catch (error) {
       console.error("Error submitting review:", error);
+      setError("Failed to submit review. Please try again later."); // Set error message
     }
   };
 
@@ -82,6 +53,7 @@ export default function Review() {
 
   return (
     <>
+      {error && <p className="text-red-500">{error}</p>} {/* Display error message */}
       <div className="mx-auto w-full max-w-[850px] text-[#27115f] bg-gray-100 p-8 rounded-lg shadow-md">
         <h2 className="text-lg font-bold mb-4">Existing Reviews</h2>
         <div className="divide-y divide-gray-300">

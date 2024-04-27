@@ -9,9 +9,11 @@ import OurExperts from "./components/ourexperts";
 import ProfDashboard from "./pages/profdashboard";
 import Specialty from "./pages/specialty";
 import Profile from "./pages/profiledetail";
-import Appointment from "./pages/patientdashboard/appointment";
 import PatientDashboard from "./pages/patientdashboard";
 import Review from "./pages/patientdashboard/review";
+import BookingForm from "./pages/patientdashboard/bookingform";
+import Appointments from "./pages/patientdashboard/appointments";
+import EditBooking from "./pages/patientdashboard/editbooking";
 
 const router = createBrowserRouter([
   { path: "/", element: <Homepage /> },
@@ -23,7 +25,10 @@ const router = createBrowserRouter([
   { path: "/profdashboard", element: <ProfDashboard /> },
   { path: "/specialty", element: <Specialty /> },
   { path: "/specialty/:id", element: <Profile /> },
-  { path: "/appointment", element: <Appointment /> },
+  { path: "/appointments", element: <Appointments /> },
+  { path: "/editbooking", element: <EditBooking /> },
+  { path: "/bookingform", element: <BookingForm /> },
+
   { path: "/review", element: <Review /> },
   { path: "/ourexperts", element: <OurExperts /> },
 
