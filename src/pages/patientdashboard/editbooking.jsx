@@ -1,24 +1,20 @@
-import { useEffect, useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 
 export default function EditBooking() {
   const params = useParams();
-
-//   const [name, setName] = useState(null);
-  const [doctor, setDoctor] = useState(null);
-  const [date, setDate] = useState(null);
-  const [time, setTime] = useState(null);
-  const [reason, setReason] = useState(null);
-
+  const [doctor, setDoctor] = useState('');
+  const [date, setDate] = useState('');
+  const [time, setTime] = useState('');
+  const [reason, setReason] = useState('');
   const navigate = useNavigate();
 
-  const getAppointment = async (e) => {
+  const getAppointment = async () => {
     try {
       const response = await fetch(
-        `${process.env.REACT_APP_MEDIKONECT_API}/appointments/${params.id}`
+        `http://localhost:5050/appointments/${params.id}`
       );
       const data = await response.json();
-    //   setName(data.name);
       setDoctor(data.doctor);
       setDate(data.date);
       setTime(data.time);
@@ -27,11 +23,11 @@ export default function EditBooking() {
       console.log(error);
     }
   };
+
   const onSubmitHandler = async (e) => {
     e.preventDefault();
 
     const editedBooking = {
-    //   name: name,
       doctor: doctor,
       date: date,
       time: time,
@@ -39,7 +35,7 @@ export default function EditBooking() {
     };
     try {
       const response = await fetch(
-        `${process.env.REACT_APP_MEDIKONECT_API}/appointments/${params.id}`,
+        `http://localhost:5050/appointments/${params.id}`,
         {
           method: "PATCH",
           headers: {
@@ -50,7 +46,7 @@ export default function EditBooking() {
       );
       const data = await response.json();
       console.log(data);
-      navigate("/appointment");
+      navigate("/patientdashboard/appointments");
     } catch (error) {
       console.log(error);
     }
@@ -62,24 +58,13 @@ export default function EditBooking() {
 
   return (
     <>
-      <div className="flex items-center justify-center p-12">
-        <div className="mx-auto w-full max-w-[850px] text-[#27115f] bg-gray-100 p-8 rounded-lg shadow-md">
+      <div className="max-w-md mx-auto mt-10 bg-white shadow-lg rounded-lg overflow-hidden">
+        <div className="mx-auto w-full max-w-[1050px] text-[#27115f] bg-orange-200 p-12 rounded-lg shadow-md">
           <h2 className="text-lg text-center font-bold mb-4">
             {" "}
             Appointment Form
           </h2>
           <form onSubmit={onSubmitHandler}>
-            <div className="mb-5">
-              {/* <input
-                type="text"
-                name="name"
-                id="name"
-                placeholder="Full Name"
-                 value={name}
-                onChange={(e) => setName(e.target.value)}
-                className="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
-              /> */}
-            </div>
             <select
               name="doctor"
               value={doctor}
@@ -98,12 +83,12 @@ export default function EditBooking() {
               <option value="Dr. Kevin Apo-era">Dr. Kevin Apo-era</option>
             </select>
 
-            <div class="-mx-3 flex flex-wrap">
-              <div class="w-full px-3 sm:w-1/2">
-                <div class="mb-5">
+            <div className="-mx-3 flex flex-wrap">
+              <div className="w-full px-3 sm:w-1/2">
+                <div className="mb-5">
                   <label
-                    for="date"
-                    class="mb-3 block text-base font-medium text-[#07074D]"
+                    htmlFor="date"
+                    className="mb-3 block text-base font-medium text-[#07074D]"
                   >
                     Date
                   </label>
@@ -117,11 +102,11 @@ export default function EditBooking() {
                   />
                 </div>
               </div>
-              <div class="w-full px-3 sm:w-1/2">
-                <div class="mb-5">
+              <div className="w-full px-3 sm:w-1/2">
+                <div className="mb-5">
                   <label
-                    for="time"
-                    class="mb-3 block text-base font-medium text-[#07074D]"
+                    htmlFor="time"
+                    className="mb-3 block text-base font-medium text-[#07074D]"
                   >
                     Time
                   </label>
@@ -129,37 +114,36 @@ export default function EditBooking() {
                     type="time"
                     name="time"
                     id="time"
-                    value= {time}
+                    value={time}
                     onChange={(e) => setTime(e.target.value)}
                     className="..."
                   />
                 </div>
               </div>
             </div>
-            <div class="mb-5">
+            <div className="mb-5">
               <label
-                for="name"
-                class="mb-3 block text-base font-medium text-[#07074D]"
+                htmlFor="reason"
+                className="mb-3 block text-base font-medium text-[#07074D]"
               >
                 Reason
               </label>
               <input
                 type="text"
-                name="name"
-                id="name"
-                placeholder="  "
+                name="reason"
+                id="reason"
+                placeholder="Enter reason"
                 value={reason}
                 onChange={(e) => setReason(e.target.value)}
                 className="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
               />
             </div>
-
             <div>
               <button
                 type="submit"
                 className="hover:shadow-form w-full rounded-md bg-[#6A64F1] py-3 px-8 text-center text-base font-semibold text-white outline-none"
               >
-                Book Appointment
+                Update Appointment
               </button>
             </div>
           </form>

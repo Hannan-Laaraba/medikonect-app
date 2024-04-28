@@ -14,6 +14,9 @@ import Review from "./pages/patientdashboard/review";
 import BookingForm from "./pages/patientdashboard/bookingform";
 import Appointments from "./pages/patientdashboard/appointments";
 import EditBooking from "./pages/patientdashboard/editbooking";
+import Logout from "./pages/patientdashboard/logout";
+import DeleteBooking from "./pages/patientdashboard/deletebooking";
+import PatientProfile from "./pages/patientdashboard/patientprofile";
 
 const router = createBrowserRouter([
   { path: "/", element: <Homepage /> },
@@ -26,8 +29,11 @@ const router = createBrowserRouter([
   { path: "/specialty", element: <Specialty /> },
   { path: "/specialty/:id", element: <Profile /> },
   { path: "/appointments", element: <Appointments /> },
-  { path: "/editbooking", element: <EditBooking /> },
+  { path: "/appointments/:id/edit", element: <EditBooking /> },
   { path: "/bookingform", element: <BookingForm /> },
+  { path: "/logout", element: <Logout /> },
+  { path: "/deletebooking", element: <DeleteBooking /> },
+  { path: "/patientprofile", element: <PatientProfile /> },
 
   { path: "/review", element: <Review /> },
   { path: "/ourexperts", element: <OurExperts /> },

@@ -22,7 +22,7 @@ export default function BookingForm() {
     };
     try {
       const response = await fetch(
-        `${process.env.REACT_APP_MEDIKONECT_API}/appointments`,
+        `http://localhost:5050/appointments`,
         {
           method: "POST",
           headers: {
@@ -33,16 +33,25 @@ export default function BookingForm() {
       );
       const data = await response.json();
       console.log(data);
-      navigate("/appointments");
+      // navigate("/appointments");
+      if (response.ok) {
+        // Show an alert
+        alert("Appointment booked successfully!");
+        // Optionally, navigate to another page
+        // navigate("/appointments");
+      } else {
+        alert("Failed to book appointment. Please try again.");
+      }
     } catch (error) {
       console.log(error);
+      alert("An error occurred. Please try again later.");
     }
   };
 
   return (
     <>
-      <div className="flex items-center justify-center p-12">
-        <div className="mx-auto w-full max-w-[850px] text-[#27115f] bg-orange-200 p-24 rounded-lg shadow-md">
+      <div className="max-w-md mx-auto mt-10 bg-white shadow-lg rounded-lg overflow-hidden">
+        <div className="mx-auto w-full max-w-[1050px] text-[#27115f] bg-orange-200 p-12 rounded-lg shadow-md">
           <h2 className="text-lg text-center font-bold mb-4">
             {" "}
             Appointment Form
@@ -158,6 +167,7 @@ export default function BookingForm() {
               >
                 Book Appointment
               </button>
+              
             </div>
           </form>
         </div>

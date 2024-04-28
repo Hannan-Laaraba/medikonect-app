@@ -115,7 +115,6 @@ export default function Footer() {
                 <li class="mt-[15px]">
                   <a
                     class="text-deutziawhite hover:text-[#C11574] font-inter text-[15px] font-normal hover:font-semibold"
-                    href="/"
                   >
                     Home
                   </a>
@@ -123,7 +122,6 @@ export default function Footer() {
                 <li class="mt-[15px]">
                   <a
                     class="text-deutziawhite hover:text-[#C11574] font-inter text-[15px] font-normal hover:font-semibold"
-                    href="/our-tutors"
                   >
                     Our Practice
                   </a>

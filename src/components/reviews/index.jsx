@@ -5,7 +5,7 @@ export default function Reviews() {
 
   useEffect(() => {
     //fetch from backend
-    const url = new URL(`${process.env.MEDIKONECT_API}/reviews`);
+    const url = new URL(`http://localhost:5050/reviews`);
 
     fetch(url)
       .then((response) => response.json())
@@ -20,7 +20,9 @@ export default function Reviews() {
 
   return (
     <>
-      <form class="max-w-md mx-auto mt-16 p-4 bg-white shadow rounded">
+      <form
+      onSubmit={setReviews} 
+      class="max-w-md mx-auto mt-16 p-4 bg-white shadow rounded">
         <h2 class="text-2xl font-bold mb-4">Leave A Review</h2>
         <div class="mb-4">
           <label for="name" class="block mb-1">
