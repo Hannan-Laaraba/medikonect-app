@@ -6,7 +6,7 @@ export default function OurServices() {
       <div className="p-20 text-[#27115f] " id="services">
       <div class="text-center p-10">
         <h1 class="text-s p-4">WHY WE STAND OUT</h1>
-        <p className="text-5xl font-bold">Our Services</p>
+        <p className="lg:text-5xl md:text-4xl sm:text-3xl font-bold">Our Services</p>
       </div>
       <section
         id="services"
@@ -15,7 +15,7 @@ export default function OurServices() {
         <div class="w-72 bg-gray-300 shadow-md rounded-xl duration-500 hover:scale-105 hover:shadow-xl">
           <a href="#">
             <img
-              src="https://img.freepik.com/free-photo/doctor-counseling-with-nurse-clinic-desk-checkup-find-patient-diagnosis-clinical-consultation-patient-by-medical-team-wearing-protective-workwear-prescribing-medicine_482257-64623.jpg?t=st=1713348541~exp=1713352141~hmac=fa16b6ef9ff0efbfdd8c914ce89f24b5c2868be5149f3008827523c16ff88b2f&w=360"
+              src="https://ln.run/og1Wi"
               alt="Product"
               class="h-80 w-72 object-cover rounded-t-xl "
             />
@@ -32,7 +32,7 @@ export default function OurServices() {
         <div class="w-72 bg-gray-300 shadow-md rounded-xl duration-500 hover:scale-105 hover:shadow-xl">
           <a href="#">
             <img
-              src="https://images.unsplash.com/photo-1582719471384-894fbb16e074?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+              src="https://ln.run/EwwpG"
               alt="Product"
               class="h-80 w-72 object-cover rounded-t-xl "
             />

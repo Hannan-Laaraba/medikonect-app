@@ -3,6 +3,7 @@ import Medikonect from "../../asset/medikonect.png";
 import Appointment from "./appointments";
 import BookingForm from "./bookingform";
 import PatientProfile from "./patientprofile";
+import Me from "../../asset/me.jpg"
 
 export default function PatientDashboard() {
   const [activeComponent, setActiveComponent] = useState("");
@@ -18,7 +19,7 @@ export default function PatientDashboard() {
         rel="stylesheet"
       />
       <div className="bg-orange-100 min-h-screen">
-        <div className="fixed bg-white text-blue-800 px-10 py-1 z-10 w-full">
+        <div className="fixed bg-white text-[#27115f] px-10 py-1 z-10 w-full">
           <div className="flex items-center justify-between py-2 text-5x1">
             <div className="">
               <img src={Medikonect} alt="medikonect" className="h-12" />
@@ -40,23 +41,11 @@ export default function PatientDashboard() {
           </div>
         </div>
 
-        <div className="flex flex-row  pt-24 px-10 pb-4">
-          <div className="w-2/12 mr-6">
-            <div className="bg-white rounded-xl shadow-lg align-center mb-6 px-6 py-4 text-center">
-              <div className="mx-auto mb-2 h-20 w-20 overflow-hidden rounded-full">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  className="h-20 w-20 p-5 text-white bg-gray-500 stroke-current"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="1.5"
-                    d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
-                  ></path>
-                </svg>
+        <div className="flex flex-col md:flex-row text-[#27115f] pt-24 px-4 md:px-10 pb-4">
+          <div className="w-full md:w-2/12 mr-6">
+            <div className="bg-white rounded-xl shadow-lg align-center mb-8 px-8 py-4 text-center">
+              <div className="mx-auto mb-2 h-28 w-28 overflow-hidden rounded-full">
+               <img src={Me} alt=""/>
               </div>
               <p className="text-center font-bold">Laaraba Ashrawee</p>
             </div>

@@ -13,7 +13,7 @@ import Dr4 from "../../asset/dr4.jpg";
 import Dr5 from "../../asset/dr5.jpg";
 import Dr6 from "../../asset/dr6.jpg";
 import Dr7 from "../../asset/dr7.jpg";
-import { Link } from "react-router-dom";
+import {HashLink as Link } from "react-router-hash-link";
 import CallToAction from "../../components/calltoaction";
 import Footer from "../../components/footer";
 import ProfileDetail from "../profiledetail";
@@ -26,7 +26,7 @@ export const providers = [
   { id: 5, image: Dr7, name: "Dr. Kevin Apo-era", specialty: "Orthopedics" },
   { id: 6, image: Provider4, name: "Dr. Samantha Adda", specialty: "Nutrition and Diet" },
   { id: 7, image: Dr4, name: "Dr. Samuel Melomey", specialty: "Internal Medicine" },
-  { id: 8, image: Dr1, name: "Dr. Mercy Korkor Essel", specialty: "Physician Assistant" },
+  { id: 8, image: Dr1, name: "Dr. Mercy Korkor Essel", specialty: "Cardiology" },
   { id: 9, image: Dr3, name: "Dr. Ernest Obimpeh", specialty: "Ophthalmology" },
   { id: 10, image: Provider1, name: "Dr. Nadia Kafui", specialty: "Obstetrics and Gynaecology" },
   { id: 11, image: Dr5, name: "Dr. Williams", specialty: "Psychiatry" },
@@ -52,7 +52,7 @@ const ProviderCard = ({ provider, profileView }) => (
       {/* render ProfileDetail component only if profileView is true */}
       {profileView && <ProfileDetail providers={[provider]} />}
 
-      <Link to={`/specialty/${provider.id}`} className="text-[#C11574] hover:underline">
+      <Link smooth to={`/specialty/${provider.id}#top`} className="text-[#C11574] hover:underline">
         View Profile
       </Link>
     </div>
@@ -83,9 +83,10 @@ export default function Specialty() {
 
   return (
     <>
+      <section id="top">
       <Navbar />
       {profileView && <ProfileDetail providers={providers} />}
-      <div className="bg-cover bg-center bg-fixed" style={{
+      <div  className="bg-cover bg-center bg-fixed" style={{
         backgroundImage: `linear-gradient( rgb(248,212,238), rgba(0, 0, 0, 0)), url(${Img})`,
         backgroundSize: "cover",
         backgroundPosition: "center",
@@ -164,6 +165,7 @@ export default function Specialty() {
 
       <CallToAction />
       <Footer />
+      </section>
     </>
   );
 }

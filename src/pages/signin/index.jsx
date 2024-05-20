@@ -20,7 +20,7 @@ export default function SignIn() {
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
-      const response = await axios.post("/api/login", { email, password });
+      const response = await axios.post(`${process.env.REACT_APP_MEDIKONECT_API}/login`, { email, password });
       // Handle successful login, e.g., store token in local storage
       if (rememberMe) {
         localStorage.setItem("rememberedUser", email);
@@ -95,7 +95,7 @@ export default function SignIn() {
         <p className="text-center text-lg">
           No account?
           <a
-            href="#"
+            href="/signup"
             className="font-medium text-[#C11574] underline-offset-4 hover:underline"
           >
             Create One

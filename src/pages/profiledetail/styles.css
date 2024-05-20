@@ -6,4 +6,5 @@
     background-color: #C11574; /* Change bullet color */
     border-radius: 50%; /* Ensures the bullet point is circular */
     margin-right: 0.5rem; /* Adjust spacing between bullet point and text */
+    color: rgb(241, 197, 229)
   }

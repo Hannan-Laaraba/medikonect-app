@@ -4,16 +4,23 @@ export default function Review() {
   const [name, setName] = useState('');
   const [feedback, setFeedback] = useState('');
   const [reviews, setReviews] = useState([]);
+  const [error, setError] = useState(null);
 
   const addReview = async (event) => {
     event.preventDefault();
+
+    // Simple form validation
+    if (!name || !feedback) {
+      setError("Please fill in both name and feedback fields.");
+      return;
+    }
 
     const formData = new FormData();
     formData.append('name', name);
     formData.append('feedback', feedback);
 
     try {
-      const response = await fetch(`http://localhost:5050/profile/:id/reviews`, {
+      const response = await fetch(`${process.env.REACT_APP_MEDIKONECT_API}/:id/reviews`, {
         method: "POST",
         body: formData,
       });
@@ -22,26 +29,29 @@ export default function Review() {
         // Reset form fields after successful submission
         setName('');
         setFeedback('');
+        setError(null);
+      } else {
+        setError("Failed to submit review. Please try again later.");
       }
     } catch (error) {
       console.error("Error adding review:", error);
-      // Handle error (e.g., display error message to the user)
+      setError("Failed to submit review. Please try again later.");
     }
   };
 
   const getReviews = async () => {
     try {
-      const response = await fetch(`http://localhost:5050/profile/:id/reviews`);
+      const response = await fetch(`${process.env.REACT_APP_MEDIKONECT_API}/:id/reviews`);
       if (response.ok) {
         const data = await response.json();
         setReviews(data);
+        setError(null);
       } else {
-        console.error("Failed to fetch reviews:", response.statusText);
-        // Handle error (e.g., display error message to the user)
+        setError("Failed to fetch reviews. Please try again later.");
       }
     } catch (error) {
       console.error("Error fetching reviews:", error);
-      // Handle error (e.g., display error message to the user)
+      setError("Failed to fetch reviews. Please try again later.");
     }
   };
 
@@ -56,6 +66,8 @@ export default function Review() {
         className="max-w-md mx-auto mt-20 p-6 bg-white border rounded-lg shadow-lg"
       >
         <h2 className="text-2xl font-bold mb-6">Feedback Form</h2>
+        {/* Display error message if there's an error */}
+        {error && <div className="text-red-500 mb-4">{error}</div>}
         <div className="mb-4">
           <label className="block text-gray-700 font-bold mb-2" htmlFor="name">
             Name:

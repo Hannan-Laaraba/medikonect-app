@@ -10,7 +10,7 @@ export default function CallToAction() {
             <img src={Medikonect} class="h-70 " alt="medikonect" />
           </div>
           <div>
-            <h1 className="text-[#27115f] font-bold text-6xl  p-10">
+            <h1 className="text-[#27115f] font-bold lg:text-6xl md:text-5xl sm:text-3xl  p-10">
               Secure your exclusive health <br />
               <span className="">consultation today!</span>
             </h1>
@@ -21,15 +21,14 @@ export default function CallToAction() {
             </p>
           </div>
 
-          <div class="mt-10">
+          <div className="mt-10 flex justify-center md:justify-start">
             <a
               href="/signin"
-              class="px-5 py-3 text-lg tracking-wider text-white bg-[#C11574] rounded-lg md:px-8 hover:bg-[#931058] group"
+              className="px-5 py-3 text-lg tracking-wider text-white bg-[#C11574] rounded-lg md:px-8 hover:bg-[#931058] group"
             >
-              <span>Book Consultation</span>{" "}
+              <span>Book Consultation</span>
             </a>
           </div>
-          
         </section>
       </div>
     </>

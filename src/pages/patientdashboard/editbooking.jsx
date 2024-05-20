@@ -12,7 +12,7 @@ export default function EditBooking() {
   const getAppointment = async () => {
     try {
       const response = await fetch(
-        `http://localhost:5050/appointments/${params.id}`
+        `${process.env.REACT_APP_MEDIKONECT_API}/appointments/${params.id}`
       );
       const data = await response.json();
       setDoctor(data.doctor);
@@ -35,7 +35,7 @@ export default function EditBooking() {
     };
     try {
       const response = await fetch(
-        `http://localhost:5050/appointments/${params.id}`,
+        `${process.env.REACT_APP_MEDIKONECT_API}/appointments/${params.id}`,
         {
           method: "PATCH",
           headers: {
