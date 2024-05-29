@@ -10,11 +10,11 @@ export default function CallToAction() {
             <img src={Medikonect} class="h-70 " alt="medikonect" />
           </div>
           <div>
-            <h1 className="text-[#27115f] font-bold lg:text-6xl md:text-5xl sm:text-3xl  p-10">
+            <h1 className="text-[#27115f] font-bold lg:text-6xl md:text-5xl text-3xl  p-10">
               Secure your exclusive health <br />
               <span className="">consultation today!</span>
             </h1>
-            <p className="text-[#27115f] text-3xl">
+            <p className="text-[#27115f] text-2xl md:text-3xl lg:text-4xl">
               Your journey to optimal health begins here. Take the first step
               towards a healthier <br />{" "}
               <span>you – consult our health professionals today.</span>

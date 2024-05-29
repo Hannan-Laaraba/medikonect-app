@@ -17,12 +17,12 @@ useEffect(() => {
   return (
     <>
       <div className="w-full bg-gray-200 p-20">
-        <div className="max-w-[1240px] mx-auto flex flex-wrap items-center justify-between">
-          <div class="flex gap-10 pr-10 ">
-          <div className="md:col-span-2 grid grid-cols-2 gap-20 items-start">
+        <div className="max-w-[1240px] mx-auto flex flex-wrap items-center justify-between ">
+          <div class="flex gap-10 pr-10 pb-4">
+          <div className="grid grid-cols-2 gap-20 items-start">
         
             <div
-              className="h-36 w-36 overflow-hidden rounded-lg ring-2 ring-gray-700 dark:ring-gray-100"
+              className="h-20 w-20 lg:h-36 lg:w-36 overflow-hidden rounded-lg ring-2 ring-gray-700 dark:ring-gray-100"
             >
               <img
                 src={Provider1}
@@ -32,7 +32,7 @@ useEffect(() => {
             </div>
             
             <div
-              className="h-36 w-36 overflow-hidden rounded-lg ring-2 ring-gray-700 dark:ring-gray-100"
+              className="h-20 w-20 lg:h-36 lg:w-36 overflow-hidden rounded-lg ring-2 ring-gray-700 dark:ring-gray-100"
             >
               <img
                 src={Provider2}
@@ -42,7 +42,7 @@ useEffect(() => {
             </div>
             
             <div
-              className="h-36 w-36 overflow-hidden rounded-lg ring-2 ring-gray-700 dark:ring-gray-100"
+              className="h-20 w-20 lg:h-36 lg:w-36 overflow-hidden rounded-lg ring-2 ring-gray-700 dark:ring-gray-100"
             >
               <img
                 src={Provider3}
@@ -52,7 +52,7 @@ useEffect(() => {
             </div>
             
             <div
-              className="h-36 w-36 overflow-hidden rounded-lg ring-2 ring-gray-700 dark:ring-gray-100"
+              className="h-20 w-20 lg:h-36 lg:w-36 overflow-hidden rounded-lg ring-2 ring-gray-700 dark:ring-gray-100"
             >
               <img
                 src={Provider4}
@@ -65,7 +65,7 @@ useEffect(() => {
           </div>
           <div className="w-full md:w-[50%] lg:w-[60%] text-center md:text-left">
             <p className="text-[#27115f]">OUR EXPERTS</p>
-            <h1 className="text-[#27115f] lg:text-5xl font-bold py-2  md:text-4xl sm:text-3xl ">
+            <h1 className="text-[#27115f] lg:text-5xl font-bold py-2 md:text-4xl text-2xl ">
               Top-class professionals.
             </h1>
             <p className="text-[#27115f] text-xl">

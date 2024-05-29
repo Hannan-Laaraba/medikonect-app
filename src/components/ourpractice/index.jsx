@@ -14,8 +14,8 @@ export default function OurPractice() {
             />
           </div>
           <div className="w-full md:w-1/2 lg:w-3/5 px-4 md:px-0">
-            <p className="text-[#27115f] font-bold">ABOUT MEDIKONECT</p>
-            <h1 className="text-[#27115f] text-4xl md:text-5xl font-bold py-2">
+            <p className="text-[#27115f] ">ABOUT MEDIKONECT</p>
+            <h1 className="text-[#27115f] text-4xl md:text-5xl lg:text-6xl font-bold py-2">
               We are committed to revolutionizing
               <br /> <span className="block">access to healthcare</span>
             </h1>
@@ -39,7 +39,7 @@ export default function OurPractice() {
               informed decisions and receiving the support you deserve.
             </p>
             <br />
-            <button className="text-white bg-[#C11574] hover:bg-[#890b50] focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mb-4 md:mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none">
+            <button className="text-white bg-[#C11574] hover:bg-[#890b50] focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm  px-5 py-2.5 mb-4 md:mb-2  focus:outline-none">
               Learn More
             </button>
           </div>
